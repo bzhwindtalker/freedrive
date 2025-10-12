@@ -16,12 +16,12 @@ The design prioritizes a streamlined, integrated, and lightweight system, with a
 
 ### On-Board Setup (Season 2)
 This image shows the integrated pod from the previous version of the project, mounted on a custom board.
-![Integrated Pod on Board](https://foil.zone/uploads/default/original/3X/8/d/8d43615f7959955ed2e0e0a719d08e09f58f50c7.jpeg)
+![Integrated Pod on Board](https://foil.zone/uploads/default/original/3X/8/e/8e38e1efef3be94823d5d4267466f670da428131.jpeg)
 
 ### CAD and Layout (Season 3)
 The latest version focuses on a compact internal layout and a clean cutout for board integration.
 
-![Internal Layout](https://foil.zone/uploads/default/original/3X/8/e/8e04e4c2957c8d167f1b6238380e90c8b25e797e.png)![Board Cutout Diagram](https://foil.zone/uploads/default/original/3X/f/3/f3099953cd3b54433100223d6de5d3e64f02f915.png)
+![Internal Layout](https://foil.zone/uploads/default/original/3X/f/d/fd50e1a35150eb6391bf91157b8e83eabf275c57.jpeg)![Board Cutout Diagram](https://foil.zone/uploads/default/original/3X/2/8/281074a2cd745ef56853fe09f2d2ce9c1e03947c.jpeg)
 
 ## Project Status
 
