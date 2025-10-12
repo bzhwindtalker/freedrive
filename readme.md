@@ -14,12 +14,12 @@ The design prioritizes a streamlined, integrated, and lightweight system, with a
 *   **Motor Controller:** The system is managed by a VESC-based electronic speed controller.
 *   **Validated Propulsion:** The project utilizes custom 3D-printed components, including a successfully tested 3D-printed aluminum propeller that has been in use since January 2025, with a 6384 120KV motor.
 
-### On-Board Setup (Season 2)
-This image shows the integrated pod from the previous version of the project, mounted on a custom board.
-![Integrated Pod on Board](https://foil.zone/uploads/default/original/3X/8/e/8e38e1efef3be94823d5d4267466f670da428131.jpeg)
+![full setup](https://foil.zone/uploads/default/optimized/3X/7/6/7600b1d7a83e75178b8368f0d5a1d5efb3863aa3_2_562x750.jpeg)
 
 ### CAD and Layout (Season 3)
 The latest version focuses on a compact internal layout and a clean cutout for board integration.
+
+![Integrated Pod on Board](https://foil.zone/uploads/default/original/3X/8/e/8e38e1efef3be94823d5d4267466f670da428131.jpeg)
 
 ![Internal Layout](https://foil.zone/uploads/default/original/3X/f/d/fd50e1a35150eb6391bf91157b8e83eabf275c57.jpeg)![Board Cutout Diagram](https://foil.zone/uploads/default/original/3X/2/8/281074a2cd745ef56853fe09f2d2ce9c1e03947c.jpeg)
 
