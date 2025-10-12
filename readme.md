@@ -42,10 +42,10 @@ It is **not** a full-power e-foil. The goal is a minimal, efficient setup simila
 ## Limitations
 
 *   **Not travel freindly**: 12S1P of 21700 is above 160 wh allowed for airplane transport. No travel battery solution has been designed so far.
-*   **Low range**: If your use case involves a lot of motoring around, the 12S1P will be very limited. Same if your weight is above 90kgs, the system has not been tested with heavier riders so far
+*   **Low range**: If your use case involves a lot of motoring around, the 12S1P will be very limited. Same if your weight is above 90kgs, the system has not been tested with heavier riders so far.
 *   **DIY project**: Even if the project is supposed to have a good level of documentation, it remains a hobby project, so expect to have to figure out certain things. The battery need a custom build and can not be bought off the shelf AFAIK.
 *   **DANGER**: A propeller under the board is not to be taken lightly. Mishandling, technical error or user error can cause dangerous situations that could lead to severe ingury. Not kidding, we all had some close calls.
-*   **No warranty**:This is a DIY project, that goes into the water (saltwater too). Bad things can happen, due to technical issues, wear and tear, user error. Support will be provided without any reply, service or delay garantee.
+*   **No warranty**: This is a DIY project, that goes into the water (saltwater too). Bad things can happen, due to technical issues, wear and tear, user error. Support will be provided without any reply, service or delay garantee.
 
 ## Media & Communication
 
