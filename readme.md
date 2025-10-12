@@ -1,3 +1,6 @@
+////  !  READ TODO BEFORE ORDERING PRINTS ! ////
+
+
 Open foil assist design based on multiple iterations and community feedback
 
 # freedrive
