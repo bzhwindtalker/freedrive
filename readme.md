@@ -49,7 +49,7 @@ It is **not** a full-power e-foil. The goal is a minimal, efficient setup simila
 
 ## Media & Communication
 
-*   **Main Forum Thread**: Follow the complete development log on the [foil.zone forum](https://foil.zone/t/open-foil-assist-design-multiple-iterations-and-community-feedback/17215).
+*   **Main Forum Thread**: Follow the complete development log on the [foil.zone forum]((https://foil.zone/t/light-assist-season-3)).
 *   **Instagram**: [@adam_mercier_fr](https://www.instagram.com/adam_mercier_fr/)
 *   **YouTube**: [@bzhwindtalker29](https://www.youtube.com/@bzhwindtalker29)
 
