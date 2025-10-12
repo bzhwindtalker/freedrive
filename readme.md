@@ -39,7 +39,7 @@ It is **not** a full-power e-foil. The goal is a minimal, efficient setup simila
 *   **More Juice**: A larger 12S2P battery pack is being developed for longer sessions or for a more beginner-friendly setup.
 *   **Weight Reduction**: The swappable pod design makes it easy to experiment with different motors and props to find even lighter combinations.
 
-##Limitations
+## Limitations
 
 *   **Not travel freindly**: 12S1P of 21700 is above 160 wh allowed for airplane transport. No travel battery solution has been designed so far.
 *   **Low range**: If your use case involves a lot of motoring around, the 12S1P will be very limited. Same if your weight is above 90kgs, the system has not been tested with heavier riders so far
