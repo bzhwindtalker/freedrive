@@ -38,6 +38,7 @@ It is **not** a full-power e-foil. The goal is a minimal, efficient setup simila
 
 *   **More Juice**: A larger 12S2P battery pack is being developed for longer sessions or for a more beginner-friendly setup.
 *   **Weight Reduction**: The swappable pod design makes it easy to experiment with different motors and props to find even lighter combinations.
+*    **Flight/solderless battery**: Battery that can be assembled from individual 21700 cells and this airplane safe (disassemble for flight, assemble when landed).
 
 ## Limitations
 
