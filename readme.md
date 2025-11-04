@@ -32,11 +32,7 @@ Tested in followong conditions :
 *   **FOILS**: 1050CM2 barracuda L ; 1600cm2 barracuda XL; 85cm mast
 *   **Boards**: 4'2 - 25lt ; 7'2 - 95lt
 *    **Rider**: 66kg dry, good riding ability, but not expert/alien level
-
-*   **Active Development**: The project is in its fourth major version ("Season 3"). The primary goals are improving reliability, making it easier to service, and shaving off as much weight as possible.
-*   **Community Validated**: The V2 design was validated by the community. Design files were shared with about 15 people, leading to at least two known successful builds.
-*   **V4 system** With the updates included in the V4 system, now is the best time to get start building your own, as the project has hit a good maturity state.
-
+*    **Conditions**: Fresh water ; Salt water tested extensively in V2 and V2 versions but not yet in V4
 ## Planned Evolutions
 
 *   **More Juice**: A larger 12S2P battery pack is being developed for longer sessions or for a more beginner-friendly setup.
