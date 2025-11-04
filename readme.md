@@ -15,7 +15,7 @@ The system is built around a VESC-based controller and has been proven with a 63
 | **Phase Current** | 125A - 150A |
 | **Power** | ~2200W (with 6384 120KV motor) |
 | **Weight** | ~2.8kg (controller, pod, and battery) |
-| **Expected Starts**| 10 to 15 (highly dependent on rider, foil, & board) |
+| **Expected Starts**| 10 to 30 (highly dependent on rider, foil, & board) |
 | **Standard Battery**| 12S1P 21700 pack |
 | **Assist +1 battery cost**| ~650€ |
 
@@ -28,7 +28,10 @@ This project is for a lightweight electric hydrofoil assist. Think of it as a sm
 
 It is **not** a full-power e-foil. The goal is a minimal, efficient setup similar to commercial systems like the Flite AMP or Foil Drive Assist. The core of the design is a slim (25mm thick) 3D-printed pod that sits under the board and houses the battery and electronics, keeping drag low for a clean setup.
 
-## Project Status
+Tested in followong conditions : 
+*   **FOILS**: 1050CM2 barracuda L ; 1600cm2 barracuda XL; 85cm mast
+*   **Boards**: 4'2 - 25lt ; 7'2 - 95lt
+*    **Rider**: 66kg dry, good riding ability, but not expert/alien level
 
 *   **Active Development**: The project is in its fourth major version ("Season 3"). The primary goals are improving reliability, making it easier to service, and shaving off as much weight as possible.
 *   **Community Validated**: The V2 design was validated by the community. Design files were shared with about 15 people, leading to at least two known successful builds.
