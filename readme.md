@@ -17,18 +17,46 @@ A lightweight, open-source electric **foil assist** system for riders who want h
 
 ---
 
-## Latest verified updates (Feb 2026)
+## Community Builds
+
+Freedrive files have been shared with 15+ builders since Season 2. Active community replication builds in 2026 include:
+
+| Builder | Location | Status | Notes |
+| :--- | :--- | :--- | :--- |
+| **tkfoil** | Germany | ✅ Running | Full replica, 2.3kW+, 30+ starts/session, FD LR6 prop |
+| **Mikey** | — | 🔄 In progress | Housing adapted for Flysky 74100 VESC |
+| Corsica builder | France | ✅ Running | RS50 tabless cells, custom blades |
+
+See the [foil.zone development thread](https://foil.zone/t/light-assist-season-3/24787) for detailed build logs and ongoing discussions.
+
+---
+
+## Latest verified updates (June 2026)
 
 From the build thread on foil.zone:
 
+### 5085 Motor Testing — Weight Reduction Path
+- **Post #208** — **5085 motor** ordered (same as @foilstate's proven design), targeting **~400g weight savings** over the 6384 reference setup.
+- **Post #211–#220** — 5085 pod hacked and first water test completed with carbon prop + cotter pins. Despite unbalanced prop and improvised blade mounting, the motor performed well for flat-water starts. Confirmed sufficient for wave/DW assist with small board at 66kg/1600cm² foil.
+- **Post #256** — **Titanium blades** received and ready for testing — expected to eliminate blade failure risk.
+
+### Community Replication Builds
+- **tkfoil** (Posts #188–#259) — Full replica build from scratch: Craft Cloud aluminum prints, custom spot-welded 12S1P battery with casting epoxy, external antenna setup. After VESC tuning (phase current 125A+, ERPM limit 35k), achieved **2.3kW+ output** and **30+ successful starts** with FD LR6 prop on DW board setup.
+- **Mikey** (Posts #183–#187) — Housing adapted to Flysky 74100 VESC + Foil Drive motor components.
+
+### Previous Highlights (Feb 2026)
 - **Post #149** — Good results with **EVA foam seals** and move to **titanium screws** after M8 stainless fastener failures.
-- **Post #150** — New build assembled in Corsica with **RS50 tabless cells (5.15Ah)** and custom blade work/testing.
-- **Post #152** — Clarification that the project needs **no CNC**: parts are printable at home or via services; material guidance shared for each major component.
+- **Post #150** — New build assembled in Corsica with **RS50 tabless cells (5.15Ah)**.
+- **Post #152** — Clarification that the project needs **no CNC**: parts are printable at home or via services.
 
 Links:
-- https://foil.zone/t/light-assist-season-3/24787/149
-- https://foil.zone/t/light-assist-season-3/24787/150
-- https://foil.zone/t/light-assist-season-3/24787/152
+- https://foil.zone/t/light-assist-season-3/24787/208 (5085 motor)
+- https://foil.zone/t/light-assist-season-3/24787/220 (5085 first test)
+- https://foil.zone/t/light-assist-season-3/24787/256 (titanium blades)
+- https://foil.zone/t/light-assist-season-3/24787/249 (community build success)
+- https://foil.zone/t/light-assist-season-3/24787/149 (EVA seals)
+- https://foil.zone/t/light-assist-season-3/24787/150 (Corsica build)
+- https://foil.zone/t/light-assist-season-3/24787/152 (no CNC)
 
 ![Corsica assembled unit (community build)](https://foil.zone/uploads/default/original/3X/2/c/2c2dc51ec5a8e2bff7fa10fac7b786cc5623d677.jpeg)
 
