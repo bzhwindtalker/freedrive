@@ -10,11 +10,10 @@ A lightweight, open-source electric **foil assist** system for riders who want h
 
 ## News
 
-### 2026-10-06 — Season 4 turbine: first water test passed, dedicated build started
-- **Jet drive (turbine) first water test passed** (13 Sept): the S4 ducted-jet unit starts the small board with a full battery and flies the big board with pumping. Max draw 41V/65A ≈ 2.66 kW. Motor-off touchdown is a hard drag brake; motor-on touchdown is clean. Air intake is very sensitive. Test videos: [13 septembre 2026](https://www.youtube.com/watch?v=aBwcKk_be1A) and [End of battery](https://www.youtube.com/watch?v=OXS7Xq_WdP4).
-- **5085 motor path validated**: ~400 g lighter than the 6384 setup. First test on 16 May with an unbalanced carbon prop felt stronger than the maytech 6374. Titanium blade set (90 USD) works out of the box — "very smooth, gets forgotten when pumping". Best DW score of the season set on 15 kt tailwind.
-- **Dedicated S4 system concept v1** (17 Sept): 95 mm 5080 jet, 12S2P removable 21700 (travel-safe sealed compartment), in-board cartridge intake ahead of the mast.
-- **S4 board build started** (1 Oct): 163×52×80 mm EPS blank, no trench (parawing capable), dual stringer, 2×125 gr glass + 200 gr carbon patch. Target ~4 kg. Bottom glassed 5 Oct.
+### 2026-10-06 — Season 4 turbine: first water test passed
+- **Jet drive (turbine) first water test passed** (13 Sept): the S4 ducted-jet unit starts the small board and flies the big board with pumping. Max draw 41V/65A ≈ 2.66 kW. Motor-off touchdown drags, motor-on is clean.
+- **5085 motor + titanium blades validated**: ~400 g lighter than the 6384 setup, smoothest feel of all tested motors.
+- Test videos: [13 septembre 2026](https://www.youtube.com/watch?v=aBwcKk_be1A), [End of battery](https://www.youtube.com/watch?v=OXS7Xq_WdP4).
 - Full log, photos and test data: [docs/turbine-development.md](docs/turbine-development.md)
 
 ![S4 jet first test — foiling](docs/media/jet-turbine-test/yt-jet-foiling.jpg)

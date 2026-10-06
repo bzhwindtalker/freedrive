@@ -37,9 +37,6 @@ Trade-offs accepted for v1:
 | 2026-09-08 | Concept detail: angled intake to save space + reduce cavitation. 5080 motor + 4-blade prop selected | [#348](https://foil.zone/t/24787/348) |
 | 2026-09-12 | Bench/early water feedback: sensitive to air intake, balance OK, no scrape/vibration | [#354](https://foil.zone/t/24787/354) |
 | 2026-09-13 | **First water test success** (see [§5](#5-first-water-test--13-sept-2026)). Test videos posted | [#355](https://foil.zone/t/24787/355), [#356](https://foil.zone/t/24787/356) |
-| 2026-09-17 | Dedicated S4 system concept v1 (95mm 5080, 12S2P 21700, in-board cartridge) | [#358](https://foil.zone/t/24787/358) |
-| 2026-10-01 | Dedicated S4 board build started (163×52×80 mm EPS blank, dual stringer) | [#364](https://foil.zone/t/24787/364) |
-| 2026-10-05 | Board bottom glassed. Final board target ~4 kg | [#368](https://foil.zone/t/24787/368) |
 
 ---
 
@@ -114,58 +111,7 @@ On-site photos from the test day (post #355):
 
 ---
 
-## 6. Dedicated S4 system concept v1 (17 Sept 2026)
-
-Following the successful test jet, a dedicated in-board system was drafted
-(post [#358](https://foil.zone/t/24787/358)):
-
-- **Jet**: 95 mm 5080.
-- **Battery**: 12S2P removable 21700. Sealed compartment that can be filled
-  with a 4S1P + wires for airline travel (Wh limit).
-- **Intake layout**: cartridge from the back of the board (Flite-style) or from
-  the top as a reverse trench board. Vs Flite AMP: suction entry in front of
-  the mast instead of the sides — easier to build, open question on touchdown
-  suction effect.
-- **Board**: dual plywood stringers on each side of the foil box, or strong
-  carbon tube. Electronics on top of the unit for signal.
-- **Open issues**: unit thickness (track clearance), board comfort + rigidity,
-  touchdown/suction behavior in front of the mast.
-
-Concept renders (post #358):
-
-| Unit side view | Unit top view | Board integration |
-| :--- | :--- | :--- |
-| ![](media/jet-turbine-test/jet-concept-side.jpg) | ![](media/jet-turbine-test/jet-concept-unit.jpg) | ![](media/jet-turbine-test/jet-board-underside.jpg) |
-
----
-
-## 7. S4 board build (Oct 2026)
-
-Board build started 2026-10-01 (post [#364](https://foil.zone/t/24787/364)):
-
-- Blank: EPS 163 × 52 × 80 mm max thickness (limited by thick-blank availability).
-- **No trench** — the board must also parawing in big conditions.
-- Shaping in progress, dual stringer layout.
-
-Glassing update 2026-10-05 (post [#368](https://foil.zone/t/24787/368)):
-
-- Bottom glassed, wet lay (no vacuum, no peel ply).
-- Laminate: 2 × 125 gr glass + 200 gr carbon patch top/bottom over the dual stringer.
-- **Target board weight: ~4 kg.**
-
-Build photos:
-
-| Blank 1 | Blank 2 | Shaping 1 | Shaping 2 |
-| :--- | :--- | :--- | :--- |
-| ![](media/build/board-blank-1.jpg) | ![](media/build/board-blank-2.jpg) | ![](media/build/shaping-1.jpg) | ![](media/build/shaping-2.jpg) |
-
-| Bottom glassed | Carbon patch |
-| :--- | :--- |
-| ![](media/build/glass-bottom.jpg) | ![](media/build/carbon-patch.jpg) |
-
----
-
-## 8. Known gaps (carried from research.md, updated by the tests)
+## 6. Known gaps (carried from research.md, updated by the tests)
 
 1. **Prop pitch**: 95 mm too low for DW speed. Higher pitch impeller next.
 2. **Air intake**: sensitive → shroud or redesigned intake.
@@ -176,7 +122,7 @@ Build photos:
 
 ---
 
-## 9. Links
+## 7. Links
 
 - S4 jet concept: https://foil.zone/t/light-assist-season-3/24787/345
 - Angled intake + motor: https://foil.zone/t/light-assist-season-3/24787/348
@@ -185,9 +131,6 @@ Build photos:
 - Test videos: https://foil.zone/t/light-assist-season-3/24787/356
   - [13 septembre 2026](https://www.youtube.com/watch?v=aBwcKk_be1A)
   - [End of battery](https://www.youtube.com/watch?v=OXS7Xq_WdP4)
-- Dedicated system concept: https://foil.zone/t/light-assist-season-3/24787/358
-- S4 board build: https://foil.zone/t/light-assist-season-3/24787/364
-- Board glassing: https://foil.zone/t/light-assist-season-3/24787/368
 - 5085 motor: https://foil.zone/t/light-assist-season-3/24787/208
 - Ti blades: https://foil.zone/t/light-assist-season-3/24787/256
 - Ti prop test: https://foil.zone/t/light-assist-season-3/24787/261
