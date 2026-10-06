@@ -4,6 +4,9 @@ Research on water jet / impeller propulsion for foil assist system.
 Context: Freedrive S4 jet duct concept, comparison with Flite AMP,
 and smaller-diameter (40-60mm) impeller options for reduced system thickness.
 
+Full build/test log with photos and video references:
+[docs/turbine-development.md](docs/turbine-development.md)
+
 ---
 
 ## 1. Current Setup (Freedrive S4 Jet)
