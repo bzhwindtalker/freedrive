@@ -83,7 +83,7 @@ market comparison (Foilfun). Fliteboard and the two reviews agree on the headlin
 | Cell capacity | **142 Wh** per AMPCell, **284 Wh** for two | official + Inertia |
 | Charge time | **about 50 min** for two cells on the included charger | The Inertia |
 | Boost count per session | **about 40 boosts**, session about 2 h | [Foilfun comparison](https://foilfun.com/foil-assist/) |
-| Duty cycle | **10 s** fixed cycle, moderate → high → moderate → off | [foilsurfing.net](https://foilsurfing.net/flitelab-amp-board-initial-thoughts/) |
+| Duty cycle | **Boost = about 5 s (±2 s) at max power.** Paddle Assist = low power for 1 min. About **40 Boost / Paddle Assist actions** from 2 × AMPCell_142 | [FLITELab FAQ](https://fliteboard.com/en-ca/pages/flitelab-faq). A rider-reported 10 s cycle: [foilsurfing.net](https://foilsurfing.net/flitelab-amp-board-initial-thoughts/) |
 | Price | **$8,254 USD** board package, **$11,813** with the 1010 foil | The Inertia |
 
 **Physics plausibility check (computed, not measured).** 25 kgf = 245 N. Actuator disk
@@ -97,8 +97,12 @@ theory gives `P = T · ve / 2`, so:
 | 14 m/s | 1720 W | 2150 W |
 
 So 25 kg needs roughly **1.5-2.1 kW electrical**. That matches the pack size: 284 Wh at
-1.8 kW is **9.5 min** of full thrust, or **about 57 boosts of 10 s**. Foilfun reports
-about 40 boosts. The claim is internally consistent.
+1.8 kW is **9.5 min** of full thrust, or **about 115 boosts of 5 s**. Flite quotes about
+40 actions per two cells, so the claim is internally consistent. The duty cycle also puts
+a ceiling on peak power: usable energy is about 256 Wh. If the 40 actions are 5 s boosts
+and boosts take 40-60 % of the pack, peak boost power is **1.8-2.8 kW**. If boosts take
+the whole pack, the ceiling is 4.6 kW. So the true peak is somewhere in **1.5-4.5 kW**.
+Flite publishes no wattage, so we keep the range.
 
 **Reconciling ideal theory with our own measurement.** Ideal momentum theory is a lower
 bound, not a prediction. For a plain nozzle it gives `ve = sqrt(T / (ρ·A))`:
@@ -123,8 +127,8 @@ theory. Size it from the measured point.
    foil.zone "Fr 2019 motor system" thread
    ([#116](https://foil.zone/t/3762/116)). By our scaling that ratio also points to
    about 2 kW for 25 kg.
-4. Impeller diameter is not published. We cannot place the AMP on the
-   [§8 scaling law](#8-scaling-law-for-the-jet-unit) curve without it.
+4. Impeller diameter is not published. The bracket in the next section puts it at
+   **60-75 mm**, from board thickness and energy balance. Treat it as inferred.
 
 **Access note:** The Inertia and Foiling Magazine return **403** to plain `curl`. Their
 content above was read through a text proxy. Open both links in a browser to check them.
@@ -134,9 +138,69 @@ duty qualification. It is now labelled as peak, two cells, 10 s cycle. The
 "50.4 V nominal" figure for the AMPCell is **not confirmed by these sources**; it is an
 assumption carried from earlier notes. Treat it as unverified.
 
+### Impeller diameter: not published, bracket 60-75 mm (2026-10-27)
+
+Flite does not publish the AMPJet impeller or duct diameter. Sources checked, all of them
+give only the phrase "completely enclosed impeller": the US and EU AMPJet product pages,
+the Shopify product JSON, the [FLITELab FAQ](https://fliteboard.com/en-ca/pages/flitelab-faq),
+the [FLITELab quickstart](https://fliteboard.com/pages/flitelab-quickstart), The Inertia,
+Foiling Magazine, The Foiling Collective, and dealer pages (Surfdoctor, eFoil-riders,
+Houston Kiteboarding). No teardown or measurement exists online.
+
+Two published anchors let us bracket it.
+
+**Anchor 1, board thickness.** The AMP_Board technical spec is on the product page. The
+cartridge sits inside the tail cavity, so the duct has to fit under the deck.
+
+| Board | Length | Width | Thickness |
+|---|---|---|---|
+| AMP_S 4'2" | 1270 mm | 445 mm | **79 mm** (3.1") |
+| AMP_S 4'8" | 1422 mm | 508 mm | **89 mm** (3.5") |
+| AMP_M 5'0" | 1524 mm | 457 mm | **91 mm** (3.6") |
+| AMP_M 5'8" | 1727 mm | 483 mm | **107 mm** (4.2") |
+
+A cartridge in a 79 mm thick tail leaves room for a duct of roughly **55-70 mm** after the
+shell, deck core and intake. The cartridge plan-view width in the official bottom render
+measures about 190-320 mm at the tail, so width is not the limit. Thickness is the limit.
+
+**Anchor 2, Flite's other jet.** The Fliteboard eFoil "Flite Jet 2" is specified in their
+own [User Guide](https://support.fliteboard.com/hc/en-us/article_attachments/40487401948823):
+**jet diameter 88 mm**, input 5000 W, shaft 3600 W, motor 10 500 rpm peak. That is a
+different product, but it shows the size class Flite works in.
+
+**Power needed for 25 kg, by duct diameter.** Ideal actuator disk, then our measured
+efficiency band (45 % and 35 % of ideal).
+
+| Duct | Ideal power | Electrical at 45 % | Electrical at 35 % |
+|---|---|---|---|
+| 50 mm | 1.94 kW | 4.31 kW | 5.54 kW |
+| 55 mm | 1.76 kW | 3.91 kW | 5.03 kW |
+| 60 mm | 1.61 kW | 3.59 kW | 4.61 kW |
+| 65 mm | 1.49 kW | 3.31 kW | 4.26 kW |
+| 70 mm | 1.38 kW | 3.08 kW | 3.95 kW |
+| 75 mm | 1.29 kW | 2.87 kW | 3.69 kW |
+| 80 mm | 1.21 kW | 2.69 kW | 3.46 kW |
+
+Cross-check: the duty-cycle ceiling is 1.5-4.5 kW. A 60-75 mm duct needs 2.9-4.6 kW at our
+measured efficiency. That fits. A 50 mm duct needs 4.3-5.5 kW, which the 284 Wh pack can
+only support at the extreme end.
+
+**Conclusion.** The AMPJet impeller is most likely **60-75 mm**, not a small high-RPM
+impeller. Our own 80 mm unit at 2.66 kW for 25 kg sits just above it, which supports the
+reading. Confidence is medium. The band is ±15 mm and comes from geometry and energy
+balance, not from a measurement.
+
+**What this changes for us.**
+1. The AMP does not prove that 25 kg fits in a 50 mm duct. It points the other way.
+2. Our 50 mm target at 2.2-2.7 kW still gives **15-18 kg**, see
+   [§8](#8-scaling-law-for-the-jet-unit). Open question 9 stands.
+3. Flite runs a **5 s boost**, not continuous thrust. A motor rated 1800 W can still deliver
+   a 3 kW peak for 5 s if the battery and ESC can source it. That is a way to answer open
+   question 7 without a bigger motor: define the S4 duty cycle as boost-only.
+
 ### Where Freedrive wins
 - Price (10-15x cheaper)
-- Continuous throttle control (vs 10s fixed cycle)
+- Continuous throttle control (vs a fixed about 5 s boost cycle)
 - Higher sustained power (2.66kW vs ~1.5-2kW)
 - Customizable, repairable, open source
 - Can use existing boards
