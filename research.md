@@ -216,6 +216,8 @@ balance, not from a measurement.
 - Official: https://fliteboard.com/pages/flitelab-amp
 - Product: https://fliteboard.com/products/ampjet_board-set
 - Jet: https://fliteboard.com/products/ampjet
+- Official FAQ, duty cycle and board sizes: https://fliteboard.com/en-ca/pages/flitelab-faq
+- Fliteboard User Guide, Flite Jet 2 jet diameter 88 mm: https://support.fliteboard.com/hc/en-us/article_attachments/40487401948823
 - Review: https://foilsurfing.net/flitelab-amp-board-initial-thoughts/
 - Review (independent): https://www.theinertia.com/gear/flitelab-ampjet-foil-assist-review/
 - Test (independent): https://www.thefoilingmagazine.com/test-center/flitelab-amp_jet/
