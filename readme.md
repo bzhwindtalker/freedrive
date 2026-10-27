@@ -10,6 +10,17 @@ A lightweight, open-source electric **foil assist** system for riders who want h
 
 ## News
 
+### 2026-10-27 — 50 mm jet: hardware ordered, thrust budget set
+- **Motor and shaft ordered**: 5065 **320 KV**, rated **1800 W**, **8 mm stainless shaft**. Turbine CAD paused while parts ship.
+- **Impeller path fixed**: an RC boat **40 mm** turbine (13.3 kg at 8S / 2.2 kW, builder report) scaled to **50 mm**, in a **55 mm** board cavity. Motor under the mast, water inlets on both sides, battery in front.
+- **Scaling math added**: thrust scales with (power × diameter)^(2/3). A 50 mm unit at 2.2-2.7 kW is a **15-18 kg** unit. 25 kg at 50 mm would need about 4.5 kW. See [research.md §8](research.md#8-scaling-law-for-the-jet-unit).
+- **Watch item**: the 1800 W motor rating is below the 2.2-2.7 kW the board pulls. Bench-confirm before the housing is committed.
+- **Reliability intel from the thread**: printed folding hubs are the main failure on prop builds (five cracked hubs reported). A jet has no folding hub. Potting compound dissolves silicone thermal pads. 868 MHz keeps RF range through water.
+- Log updated: [docs/turbine-development.md](docs/turbine-development.md)
+
+![Two-stage jet nacelle, section view (18 Oct CAD)](docs/media/s4-jet-2026-10/cad-progress-1.png)
+
+
 ### 2026-10-06 — Season 4 turbine: first water test passed
 - **Jet drive (turbine) first water test passed** (13 Sept): the S4 ducted-jet unit starts the small board and flies the big board with pumping. Max draw 41V/65A ≈ 2.66 kW. Motor-off touchdown drags, motor-on is clean.
 - **5085 motor + titanium blades validated**: ~400 g lighter than the 6384 setup, smoothest feel of all tested motors.

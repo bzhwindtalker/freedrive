@@ -24,6 +24,15 @@ Full build/test log with photos and video references:
   - Air intake sensitive (confirmed)
   - Pod lost in water (17 Aug 2026)
 
+### Status at 2026-10-27 (thread post [#377](https://foil.zone/t/24787/377))
+- Purchase made: **5065 motor, 320 KV, rated 1800 W** + **8 mm stainless steel shaft**.
+- Impeller path: scale an RC boat **40 mm two-stage turbine to 50 mm**
+  (post [#369](https://foil.zone/t/24787/369)). Builder report: **13.3 kg thrust at 8S / 2.2 kW**.
+- Package target: motor under the mast, one water inlet on each side, battery in front,
+  about **55 mm** package thickness.
+- Turbine CAD is paused while the motor and shaft are sourced (post #377).
+- Note: the 1800 W motor rating is below the 2.2-2.7 kW the tests pulled. See [§8](#8-scaling-law-for-the-jet-unit).
+
 ---
 
 ## 2. Flite AMP Comparison
@@ -109,6 +118,10 @@ All achievable with high-KV motor + 12s (41V).
 - 5070 600-800KV → 8,000-10,000rpm at 41V
 - Weight: 300-400g
 - Power: 2-3kW
+
+**Superseded on 2026-10-27**: a **5065 320 KV (1800 W rated)** was bought instead.
+At 12S it already turns 13,100-16,100 rpm, which covers the 50-60mm band without
+extra gearing. See [§8](#8-scaling-law-for-the-jet-unit).
 
 ---
 
@@ -239,6 +252,18 @@ All achievable with high-KV motor + 12s (41V).
 2. 5065 high-KV motor ($100)
 3. Test immediately with existing ESC + battery
 
+### Option D (path chosen on 2026-10-13): scale a proven RC turbine
+1. Buy the files for a **40 mm RC boat turbine** (post [#369](https://foil.zone/t/24787/369)).
+   Builder report: 13.3 kg thrust at 8S / 2.2 kW.
+2. Scale to **50 mm** for a package about **55 mm** thick.
+3. Put the **motor under the mast**, one **water inlet on each side**, battery in front.
+   Side inlets keep the intake below the surface. This should beat the open top duct on
+   air ingestion (post #369, unproven).
+4. Two stages, per the @BabePilot / Flite AMP logic: stage one pushes water, stage two
+   pushes the air-water mix. See [§8](#8-scaling-law-for-the-jet-unit) for the thrust this buys.
+5. Motor bought: 5065 320 KV, 1800 W rated, 8 mm stainless shaft (post [#377](https://foil.zone/t/24787/377)).
+   Check the 1800 W limit against the 2.2 kW target before the first bench run.
+
 ### Battery upgrade path
 - Current: 12s1p P45B = 199Wh (hammered at 2.66kW)
 - Option 1: 12s2p = 398Wh, ~3kg, 65A → 32A per pack
@@ -252,10 +277,140 @@ All achievable with high-KV motor + 12s (41V).
 4. **Thermal**: No cooling for 5080 at 65A sustained → monitor temp
 5. **Pod retention**: Lost pod in water → need retention mechanism
 6. **Battery**: 199Wh too small for 2.66kW → 12s2p or 16s
+7. **Motor rating**: 5065 320 KV is rated 1800 W. The 50 mm jet wants 2.2-2.7 kW.
+   Solve with a bigger motor, or two 5065 in a twin jet, or a lower thrust target.
+8. **Hub reliability**: printed folding hubs crack. See [§7.1](#71-folding-hub-cracking-the-main-reliability-failure).
+   A jet unit has no folding hub, which is one reason the jet path is more reliable.
+9. **Thrust budget honesty**: a 50 mm jet at 2.5 kW is a 15-18 kg unit. Do not
+   design the board and foil around 25 kg. See [§8](#8-scaling-law-for-the-jet-unit).
 
 ---
 
-## 7. Links
+## 7. Field intel from the thread, Aug-Oct 2026
+
+Numbers below come from rider reports in
+[Light assist Season 3](https://foil.zone/t/light-assist-season-3/24787). They are
+field data, not bench measurements.
+
+### 7.1 Folding hub cracking (the main reliability failure)
+
+| Case | Material | Result | Post |
+|:---|:---|:---|:---|
+| Adam 5085 hub | PA12 (printed) | Cracked after 5 batteries | [#323](https://foil.zone/t/24787/323) |
+| Adam 5085 hub, 2nd | printed, then PLA+ (volkv remix) | 2nd hub also broke; Ti blades lost in water | [#338](https://foil.zone/t/24787/338) |
+| @sat_be 6384 hub | CC3D PBT pro + GF | Cracked after some sessions | [#326](https://foil.zone/t/24787/326) |
+| @sat_be 6384 hub | PC-ABS | Printed, not tested yet | [#326](https://foil.zone/t/24787/326) |
+| @volkv 5085 hub | SUNLU Easy PA, 3 bolts through the base, heat inserts | Two sessions, no crack | [#336](https://foil.zone/t/24787/336) |
+| @nekitesurfing 6384 hub | SiraTech Fibreheart PPA-CF | Holding up, prints well on Bambu X1C | [#340](https://foil.zone/t/24787/340) |
+
+@volkv hammer test at 90 °C, one prop tower broken with a hammer (post [#339](https://foil.zone/t/24787/339)):
+- PETG: broke, but held better than PETG-CF.
+- PETG-CF: shattered on the second blow.
+- Easy PA: did not break, only marked and deformed.
+- Suspected weak point in printed hubs: layer adhesion in Z. Suggested fixes: print tilted 45°.
+
+Failure mode read from the thread:
+- Cracks start at the blade root / tower, not at the layer line (post [#330](https://foil.zone/t/24787/330)).
+- Foil Drive puts small chips in the hub face and smooth blade seats. The chips are
+  a sand escape path, so grit cannot jam a blade (post [#337](https://foil.zone/t/24787/337)).
+- Oxidised printed alu blades gain opening resistance over time, which raises hub load (post [#330](https://foil.zone/t/24787/330)).
+- A 5085 hub has less material than a 6384 hub, and Ti blades add a bigger snap-open torque (post [#327](https://foil.zone/t/24787/327)).
+- Fix direction in the thread: aluminium or titanium hub and adapter for reliability (post [#327](https://foil.zone/t/24787/327)).
+- Hub material question raised again in the spin-off thread: [TPU-GF for motor hub](https://foil.zone/t/tpu-gf-for-motor-hub/27024).
+
+### 7.2 Potting compound attacks thermal pads
+@tkfoil opened a controller after one season (post [#361](https://foil.zone/t/24787/361),
+follow-ups [#363](https://foil.zone/t/24787/363), [#366](https://foil.zone/t/24787/366)):
+- The silicone thermal pad dissolved where it touched Magic Gel potting compound.
+- Dissolving reached about 2 mm under the controller. The gel was still fluid only in that zone.
+- Cause read as a chemical reaction, not heat.
+- Rule: keep potting compound off the thermal pad, or pot the pad area separately.
+
+### 7.3 RF link through water
+- 868 MHz (BRemote) keeps range through the water where 2.4 GHz struggles (post [#332](https://foil.zone/t/24787/332)).
+- A smaller 868 MHz receiver was announced for 2-3 weeks out (post [#334](https://foil.zone/t/24787/334)).
+- Working fix on the Freedrive rig: lengthen the coax by soldering a second section,
+  seal the antenna ends, and line the two antennas up. Signal went back to fully usable (post [#338](https://foil.zone/t/24787/338)).
+- Best long term idea: embed the antenna inside the TPU pad between board and assist unit (post #338).
+- Corrosion around the antenna area needs sealing on both sides (post [#335](https://foil.zone/t/24787/335)).
+
+### 7.4 Remote ergonomics for pop-up
+@Jan12 retrofit, no disassembly (post [#344](https://foil.zone/t/24787/344)):
+- Low trigger that does not catch on chop.
+- Guard that stops fingers pushing the trigger and gives a flat pad to press on during the pop-up.
+
+### 7.5 Power settings that were in use on the 5085 jet
+From post [#327](https://foil.zone/t/24787/327):
+- Phase current limit 130 A → **150 A**.
+- Battery current limit 50 A → **55 A**.
+- LVC lowered to **2.5 V per cell under load**.
+- erpm raised about **10 %**.
+Effect: 1050 cm² foil became underpowered as soon as the battery sagged.
+Reading: current limits, not the motor, set the ceiling. 55 A × 50.4 V ≈ 2.77 kW.
+
+### 7.6 Session length data points
+- @tkfoil, DW board + 1300 cm² foil + 12S1P P42: 9.69 km in 2 h 11 min, about 30 waves (post [#322](https://foil.zone/t/24787/322)).
+- Same session length as a rider on Foil Drive Slim with a DW board (post #322).
+- Bigger board raises efficiency a lot, but is harder to launch (post [#323](https://foil.zone/t/24787/323)).
+
+---
+
+## 8. Scaling law for the jet unit
+
+The RC boat turbine to scale: **40 mm, 2.2 kW, 13.3 kg thrust** (post [#369](https://foil.zone/t/24787/369)).
+A 1:1 area scale (×(50/40)²) would predict 20.8 kg. That is wrong. It ignores the
+power the bigger impeller needs.
+
+Correct approach, same geometry family and the same advance ratio:
+- Thrust `T = CT · ρ · n² · D⁴`
+- Power `P = CP · ρ · n³ · D⁵`
+- Remove `n`: **T ∝ (P · D)^(2/3)**
+
+| D (mm) | P (kW) | Thrust (kg) |
+|:---|:---|:---|
+| 40 | 2.20 | 13.3 (reported) |
+| 40 | 2.66 | 15.1 |
+| 50 | 2.20 | 15.4 |
+| 50 | 2.66 | 17.5 |
+| 55 | 2.66 | 18.7 |
+| 60 | 2.66 | 19.8 |
+| 80 | 2.66 | 24.0 |
+
+Cross-check: the law gives 24 kg for the 80 mm 5080 unit at 2.66 kW. The measured
+figure for that unit is about 25 kg. The law is within 5 % on the one point we can check.
+
+Power needed for a thrust target:
+
+| D (mm) | kW for 20 kg | kW for 25 kg |
+|:---|:---|:---|
+| 50 | 3.25 | 4.54 |
+| 55 | 2.95 | 4.12 |
+| 60 | 2.70 | 3.78 |
+| 80 | 2.03 | 2.83 |
+
+Consequences for the 50 mm design:
+1. A 50 mm jet at the current 2.2-2.7 kW budget gives **15-18 kg**, not 20 kg.
+2. 25 kg at 50 mm needs about **4.5 kW**. That is out of the class.
+3. 20 kg at 55-60 mm needs **2.7-3.0 kW**. This is the nearest way to reach the
+   old 5080 thrust level with a thin unit.
+4. The bought **5065 320 KV is rated 1800 W**. Run it at 2.2 kW and it is overloaded.
+   Either keep it under 1.8 kW and accept about 13-15 kg at 50 mm, or move to a
+   5070/5085 class motor for 2.5 kW plus.
+
+### Speed check for the 5065 320 KV at 12S
+
+| Bus voltage | No-load rpm | 50 mm tip speed | 55 mm tip speed |
+|:---|:---|:---|:---|
+| 50.4 V (12S full) | 16,100 | 42 m/s | 46 m/s |
+| 44.4 V (12S nominal) | 14,200 | 37 m/s | 41 m/s |
+| 41.0 V (sag under load) | 13,100 | 34 m/s | 38 m/s |
+
+Tip speed above about 40-45 m/s in water brings cavitation risk. The 55 mm option
+sits at the top of that band at full charge. The 50 mm option has margin.
+
+---
+
+## 9. Links
 
 ### Freedrive repo
 - https://github.com/bzhwindtalker/freedrive
@@ -269,6 +424,13 @@ All achievable with high-KV motor + 12s (41V).
 - S4 jet test (13 Sept): https://foil.zone/t/light-assist-season-3/24787/355
 - 5080 motor: https://foil.zone/t/light-assist-season-3/24787/348
 - V_S prop pitch comment: https://foil.zone/t/light-assist-season-3/24787/353
+- Dedicated S4 system concept (17 Sept): https://foil.zone/t/light-assist-season-3/24787/358
+- 40 mm RC turbine files + 50 mm scaling (13 Oct): https://foil.zone/t/light-assist-season-3/24787/369
+- Two-stage jet vs AMP drag debate: https://foil.zone/t/light-assist-season-3/24787/374
+- Turbine CAD progress (18 Oct): https://foil.zone/t/light-assist-season-3/24787/373
+- Motor + shaft ordered, 5065 320 KV (27 Oct): https://foil.zone/t/light-assist-season-3/24787/377
+- Hub cracking thread, materials data: https://foil.zone/t/light-assist-season-3/24787/330
+- TPU-GF hub experiment thread: https://foil.zone/t/tpu-gf-for-motor-hub/27024
 
 ### Flite AMP
 - Official: https://fliteboard.com/pages/flitelab-amp
