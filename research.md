@@ -46,8 +46,8 @@ Full build/test log with photos and video references:
 | Battery | 12s1p P45B = **199Wh** | 2x AMPCell = **284Wh** |
 | Battery weight | ~1.5kg | 2.0kg |
 | Battery voltage | 41V (sag) | 50.4V nominal (58.8-42V) |
-| Max power | 2.66kW | ~1.5-2kW (est) |
-| Max thrust | ~25kg | 25kg (confirmed) |
+| Max power | 2.66kW | ~1.5-2kW (**our estimate; Flite publishes no power figure**) |
+| Max thrust | ~25kg | **25kg peak, 2 AMPCells, 10s boost cycle** (verified 2026-10-27) |
 | Total system weight | ~6.5-7kg | 7.2kg |
 | Control | Maytech RX + BWESC 220A (continuous throttle) | LAUNCHPad + Flite App (10s fixed cycle) |
 | Touchdown drag | HIGH (motor off) | LOW (enclosed, no prop to catch) |
@@ -66,6 +66,73 @@ Full build/test log with photos and video references:
 - Board first, jet second design philosophy
 - Jet swaps out in seconds
 - Price: $3,849 USD (jet), $7,924 USD (4'2" set)
+
+### Verification of the 25 kg figure (online check, 2026-10-27)
+
+Sources checked: Fliteboard US and EU product pages, the AMPJet product page, a dealer
+page (Wet Feet Sports), two independent reviews (The Inertia, Foiling Magazine), and one
+market comparison (Foilfun). Fliteboard and the two reviews agree on the headline number.
+
+| Claim | Value found | Source |
+|---|---|---|
+| Max thrust | **25 kg, only with 2 × AMPCells.** One cell gives less. | [fliteboard.com/products/ampjet](https://fliteboard.com/products/ampjet), [eu.fliteboard.com](https://eu.fliteboard.com/pages/flitelab-amp) |
+| Thrust, independent | "Flitelab cites **25 kg (55 lbs)** of max thrust" | [The Inertia review](https://www.theinertia.com/gear/flitelab-ampjet-foil-assist-review/) |
+| Thrust, independent | "can provide **up to 25 kg of thrust** at the touch of a button" | [Foiling Magazine test](https://www.thefoilingmagazine.com/test-center/flitelab-amp_jet/) |
+| Jet cartridge mass | **2.2 kg** with impeller, plus **2 × 1.0 kg** cells = **4.2 kg** system | The Inertia |
+| Added mass on board | "adds only 4 kg", 4'2" board + jet + 2 cells = **7.2 kg** | Foiling Magazine |
+| Cell capacity | **142 Wh** per AMPCell, **284 Wh** for two | official + Inertia |
+| Charge time | **about 50 min** for two cells on the included charger | The Inertia |
+| Boost count per session | **about 40 boosts**, session about 2 h | [Foilfun comparison](https://foilfun.com/foil-assist/) |
+| Duty cycle | **10 s** fixed cycle, moderate → high → moderate → off | [foilsurfing.net](https://foilsurfing.net/flitelab-amp-board-initial-thoughts/) |
+| Price | **$8,254 USD** board package, **$11,813** with the 1010 foil | The Inertia |
+
+**Physics plausibility check (computed, not measured).** 25 kgf = 245 N. Actuator disk
+theory gives `P = T · ve / 2`, so:
+
+| Exit velocity | Ideal power | Electrical at 80% motor + ESC |
+|---|---|---|
+| 8 m/s | 980 W | 1230 W |
+| 10 m/s | 1230 W | 1530 W |
+| 12 m/s | 1470 W | 1840 W |
+| 14 m/s | 1720 W | 2150 W |
+
+So 25 kg needs roughly **1.5-2.1 kW electrical**. That matches the pack size: 284 Wh at
+1.8 kW is **9.5 min** of full thrust, or **about 57 boosts of 10 s**. Foilfun reports
+about 40 boosts. The claim is internally consistent.
+
+**Reconciling ideal theory with our own measurement.** Ideal momentum theory is a lower
+bound, not a prediction. For a plain nozzle it gives `ve = sqrt(T / (ρ·A))`:
+
+| Nozzle | Ideal exit velocity | Ideal power |
+|---|---|---|
+| 50 mm | 11 m/s | 1.4 kW |
+| 60 mm | 9 m/s | 1.1 kW |
+| 80 mm | 7 m/s | 0.9 kW |
+
+Our **measured** 80 mm unit needed **2.66 kW** for about 25 kg. Real efficiency is
+therefore about **35 % of ideal** at this scale. Apply that same loss factor to a 50 mm
+unit and 25 kg costs about **4.5 kW**, which agrees with the
+[§8 scaling law](#8-scaling-law-for-the-jet-unit). Do not size the 50 mm jet from ideal
+theory. Size it from the measured point.
+
+**What the 25 kg figure does not tell you:**
+1. No power, no voltage, no current is published. Our 1.5-2 kW row stays an estimate.
+2. It is a **peak, short-cycle** number. It is not a continuous rating.
+3. Static thrust is not thrust at speed. Foil Drive and Elevate publish thrust at speed;
+   Flite does not. Elevate states **50 kg at 5 kW** on their home page, quoted in the
+   foil.zone "Fr 2019 motor system" thread
+   ([#116](https://foil.zone/t/3762/116)). By our scaling that ratio also points to
+   about 2 kW for 25 kg.
+4. Impeller diameter is not published. We cannot place the AMP on the
+   [§8 scaling law](#8-scaling-law-for-the-jet-unit) curve without it.
+
+**Access note:** The Inertia and Foiling Magazine return **403** to plain `curl`. Their
+content above was read through a text proxy. Open both links in a browser to check them.
+
+**Corrections made to the table above:** the earlier row read "25kg (confirmed)" with no
+duty qualification. It is now labelled as peak, two cells, 10 s cycle. The
+"50.4 V nominal" figure for the AMPCell is **not confirmed by these sources**; it is an
+assumption carried from earlier notes. Treat it as unverified.
 
 ### Where Freedrive wins
 - Price (10-15x cheaper)
@@ -86,6 +153,10 @@ Full build/test log with photos and video references:
 - Product: https://fliteboard.com/products/ampjet_board-set
 - Jet: https://fliteboard.com/products/ampjet
 - Review: https://foilsurfing.net/flitelab-amp-board-initial-thoughts/
+- Review (independent): https://www.theinertia.com/gear/flitelab-ampjet-foil-assist-review/
+- Test (independent): https://www.thefoilingmagazine.com/test-center/flitelab-amp_jet/
+- Market comparison table: https://foilfun.com/foil-assist/
+- Dealer spec text: https://wetfeetsports.com/products/flitelab-amp
 - AMPCell: https://www.kitepower.com.au/products/flitelab-amp-cell
 
 ---

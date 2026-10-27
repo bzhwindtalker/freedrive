@@ -15,6 +15,7 @@ A lightweight, open-source electric **foil assist** system for riders who want h
 - **Impeller path fixed**: an RC boat **40 mm** turbine (13.3 kg at 8S / 2.2 kW, builder report) scaled to **50 mm**, in a **55 mm** board cavity. Motor under the mast, water inlets on both sides, battery in front.
 - **Scaling math added**: thrust scales with (power × diameter)^(2/3). A 50 mm unit at 2.2-2.7 kW is a **15-18 kg** unit. 25 kg at 50 mm would need about 4.5 kW. See [research.md §8](research.md#8-scaling-law-for-the-jet-unit).
 - **Watch item**: the 1800 W motor rating is below the 2.2-2.7 kW the board pulls. Bench-confirm before the housing is committed.
+- **Flite AMP thrust verified online**: 25 kg (55 lb) is confirmed by the official pages and by two independent reviews, but it is a **peak, two-cell, 10 s boost** figure. Flite publishes no power, voltage or impeller diameter. Actuator-disk math says 25 kg needs about 1.5-2.1 kW, which matches the 284 Wh pack giving 40-57 boosts. See [research.md §2](research.md#verification-of-the-25-kg-figure-online-check-2026-10-27).
 - **Reliability intel from the thread**: printed folding hubs are the main failure on prop builds (five cracked hubs reported). A jet has no folding hub. Potting compound dissolves silicone thermal pads. 868 MHz keeps RF range through water.
 - Log updated: [docs/turbine-development.md](docs/turbine-development.md)
 
